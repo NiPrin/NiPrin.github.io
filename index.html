@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body
+            {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+                font-size: 24px;
+                color: rgb(0, 255, 0);
+                background-color: black;
+            }
+            div
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition-duration: 1s;
+            }
+            button
+            {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+                font-size: 24px;
+                background-color: black;
+                border: 12px solid #00FF00;
+                border-color: #00FF00;
+                color: rgb(0, 255, 0);
+                text-align: center;
+                border: none;
+                box-shadow: none;
+                width: 100%;
+            }
+            button:focus
+            {
+                outline: none;
+            }
+        </style>
+        <script>
+            function initialize()
+            {
+                firstDivJS = document.getElementById("firstDiv");
+                firstDivTwoJS = document.getElementById("firstDivPartTwo");
+                firstDivThreeJS = document.getElementById("firstDivPartThree");
+                secondDivJS = document.getElementById("secondDiv");
+                fakePercentJS = document.getElementById("fakePercent");
+                buttonHideDivOne = document.getElementById("hideFirstDivButton");
+                fakePercentBackEnd = 0;
+                buttonHideDivOne.style.opacity = ("0.0");
+                buttonHideDivOne.style.display = ("none");
+                secondDivJS.style.opacity = ("0.0");          
+
+                setTimeout(fakePercentage, 50);
+            }
+            function fakePercentage()
+            {
+                if (fakePercentBackEnd <= 100)
+                {
+                    setTimeout(fakePercentage, 50);
+                    fakePercentBackEnd = fakePercentBackEnd + 1;
+                }
+                if (fakePercentBackEnd > 100)
+                {
+                    fakePercentBackEnd = 100;
+                }
+                display();
+            }
+            function hideFirstDivPlease()
+            {
+                if (fakePercentBackEnd == 100)
+                {
+                    buttonHideDivOne.style.opacity = ("0.0");
+                    firstDivJS.style.opacity = ("0.0");
+                    firstDivTwoJS.style.opacity = ("0.0");
+                    firstDivThreeJS.style.opacity = ("0.0");
+                    buttonHideDivOne.style.display = ("none");
+                    firstDivJS.style.display = ("none");
+                    firstDivTwoJS.style.display = ("none");
+                    firstDivThreeJS.style.display = ("none");
+                    secondDivJS.style.opacity = ("1.0");
+                }
+            }
+            function display()
+            {
+                fakePercentJS.innerHTML = fakePercentBackEnd;
+                if (fakePercentBackEnd == 100)
+                {
+                    buttonHideDivOne.style.opacity = ("1.0");
+                    buttonHideDivOne.style.display = ("block");
+                }
+            }
+        </script>
+    </head>
+    <body onload = "initialize();" onclick = "hideFirstDivPlease();">
+        <div id = "firstDiv">
+            <div>
+                <img src = "gmaildribbble.gif" width = "400px" height = "400px">
+            </div>
+        </div>
+        <div id = "firstDivPartTwo">
+            <span>Loadg messag...<span id = "fakePercent">0</span>per cent.</span> <br>
+        </div>
+        <div id = "firstDivPartThree">
+            <button id = "hideFirstDivButton" onclick = "hideFirstDivPlease();" opacity = "0.0">Open mesag (nvolop)</button>
+        </div>
+        <div id = "secondDiv" opacity = "0.0">
+            <p>
+                Welcomee! You havee ben selectd to win 1.million united states Dollar.You hav bin select becaus I forsee that you will go to institution later that wille take your monie and soul. The 1.million United states dollar can at leaste fix one of thosee.Ther is no ned for Youu to provcide yoyur persnonal inforrmation,pleas come to room 2W6 of Brokeyn Dech in the hhour 16:00. Join me and you to shal feeel like a king! <br><br>
+                Signd, goronyo kumfufu of nigereia
+            </p>
+            <p>
+
+            </p>
+        </div>
+    </body>
+</html>
